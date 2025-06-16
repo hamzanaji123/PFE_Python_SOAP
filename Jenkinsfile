@@ -5,7 +5,7 @@ pipeline {
         stage('Préparation') {
             steps {
                 echo 'Création de l’environnement virtuel...'
-                bat 'python -m venv venv'
+                bat '"C:\\Users\\allo\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" -m venv venv'
                 bat 'venv\\Scripts\\pip install --upgrade pip'
                 bat 'venv\\Scripts\\pip install -r requirements.txt'
             }
