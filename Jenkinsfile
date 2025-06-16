@@ -5,16 +5,16 @@ pipeline {
         stage('Préparation') {
             steps {
                 echo 'Création de l’environnement virtuel...'
-                bat 'cmd /c ""C:\\Users\\allo\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" -m venv venv"'
-                bat 'cmd /c "venv\\Scripts\\pip install --upgrade pip"'
-                bat 'cmd /c "venv\\Scripts\\pip install -r requirements.txt"'
+                bat '"C:\\Windows\\System32\\cmd.exe" /c "C:\\Users\\allo\\AppData\\Local\\Programs\\Python\\Python313\\python.exe -m venv venv"'
+                bat '"C:\\Windows\\System32\\cmd.exe" /c "venv\\Scripts\\pip install --upgrade pip"'
+                bat '"C:\\Windows\\System32\\cmd.exe" /c "venv\\Scripts\\pip install -r requirements.txt"'
             }
         }
 
         stage('Tests') {
             steps {
                 echo 'Exécution des tests...'
-                bat 'cmd /c "venv\\Scripts\\pytest test_soap_client.py --junitxml=results.xml --html=report.html"'
+                bat '"C:\\Windows\\System32\\cmd.exe" /c "venv\\Scripts\\pytest test_soap_client.py --junitxml=results.xml --html=report.html"'
             }
         }
     }
